@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Récap Python — Holberton</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --border: #e6e6e9;
+    --text: #1c1c1f;
+    --muted: #6b7280;
+    --accent: #4f46e5;
+    --accent-soft: #eef0fd;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  header {
+    padding: 64px 24px 32px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  header h1 {
+    margin: 0 0 8px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+  }
+
+  nav {
+    max-width: 920px;
+    margin: 24px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    padding: 0 24px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.15s ease;
+  }
+
+  nav a:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  section {
+    margin-bottom: 56px;
+    scroll-margin-top: 24px;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+
+  section .section-desc {
+    color: var(--muted);
+    margin: 0 0 24px;
+    font-size: 0.95rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .card p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .card ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.9rem;
+  }
+
+  .card ul li {
+    margin-bottom: 4px;
+  }
+
+  .card code {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-family: "SF Mono", Consolas, Menlo, monospace;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 16px 24px; }
+    header h1 { font-size: 1.7rem; }
+    main { padding: 32px 16px 64px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Récap — Parcours Python</h1>
+  <p>Vue d'ensemble des sujets abordés dans les repos Holberton</p>
+  <nav>
+    <a href="#fundamentals">Fondamentaux</a>
+    <a href="#advanced">Fichiers</a>
+    <a href="#oop">POO</a>
+    <a href="#web">Web &amp; Données</a>
+    <a href="#design">Conception</a>
+    <a href="#algo">Algorithmes</a>
+    <a href="#sql">SQL</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="fundamentals">
+    <h2>Python Fundamentals</h2>
+    <p class="section-desc">Les bases du langage : flux d'exécution, structures de données, fonctions et gestion d'erreurs.</p>
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">Control flow</span>
+        <h3>Conditions &amp; boucles</h3>
+        <p>Piloter l'exécution d'un programme.</p>
+        <ul>
+          <li><code>if / elif / else</code></li>
+          <li>Boucles <code>for</code> avec <code>range</code>, boucles imbriquées</li>
+          <li><code>continue</code> pour sauter une itération</li>
+          <li><code>ord</code> / <code>chr</code> (codes ASCII)</li>
+          <li>Formatage : <code>{:02d}</code>, <code>hex()</code></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">Data structures</span>
+        <h3>Structures de données</h3>
+        <p>Choisir et manipuler la bonne collection.</p>
+        <ul>
+          <li><code>list</code> : index, mutation, matrices (listes de listes)</li>
+          <li><code>tuple</code> : immuable, unpacking</li>
+          <li><code>dict</code> : ajout/maj, parcours <code>items()</code>, <code>max(key=...)</code></li>
+          <li><code>set</code> : unicité, intersection/union/différence</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">Functions &amp; modules</span>
+        <h3>Fonctions &amp; modules</h3>
+        <p>Organiser le code en composants réutilisables.</p>
+        <ul>
+          <li>Définition de fonctions, <code>return</code></li>
+          <li><code>if __name__ == "__main__":</code></li>
+          <li><code>import</code> / <code>from ... import ...</code></li>
+          <li>Regrouper des fonctions liées dans un module</li>
+          <li>Réimplémentation d'algorithmes simples (<code>pow</code>)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">Exceptions</span>
+        <h3>Gestion des erreurs</h3>
+        <p>Rendre les scripts robustes face aux entrées invalides.</p>
+        <ul>
+          <li><code>try / except / finally</code></li>
+          <li><code>raise</code> avec message personnalisé</li>
+          <li>Exceptions courantes : <code>TypeError</code>, <code>ValueError</code>, <code>IndexError</code>, <code>ZeroDivisionError</code>, <code>NameError</code></li>
+          <li>Retour de statut (<code>True/False</code>, compteurs) plutôt qu'un crash</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="advanced">
+    <h2>Fichiers (Python Advanced)</h2>
+    <p class="section-desc">Lecture, écriture et ajout de contenu dans des fichiers texte.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag">File handling</span>
+        <h3>Manipulation de fichiers</h3>
+        <ul>
+          <li><code>open(filename, mode, encoding="utf-8")</code></li>
+          <li>Gestionnaire de contexte <code>with</code></li>
+          <li>Modes <code>"r"</code>, <code>"w"</code> (écrase), <code>"a"</code> (ajoute), <code>"rb"</code>/<code>"wb"</code> (binaire)</li>
+          <li><code>read()</code>, <code>readline()</code>, <code>readlines()</code></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="oop">
+    <h2>Programmation Orientée Objet</h2>
+    <p class="section-desc">Classes, encapsulation, héritage et abstraction en Python.</p>
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">Classes &amp; object model</span>
+        <h3>Classes &amp; objets</h3>
+        <p>Progression <code>Square</code> → <code>Rectangle</code>.</p>
+        <ul>
+          <li>Constructeur <code>__init__</code> et <code>self</code></li>
+          <li>Attributs privés (<code>__attr</code>, name mangling)</li>
+          <li>Validation de type/valeur (<code>isinstance</code>, <code>TypeError</code>, <code>ValueError</code>)</li>
+          <li><code>@property</code> / <code>@x.setter</code> pour un accès contrôlé</li>
+          <li>Méthodes magiques : <code>__str__</code></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">Inheritance</span>
+        <h3>Héritage</h3>
+        <p><code>BaseGeometry</code> → <code>Rectangle</code> → <code>Square</code>.</p>
+        <ul>
+          <li>Hériter d'une classe de base et réutiliser ses méthodes</li>
+          <li>Validation centralisée (<code>integer_validator</code>)</li>
+          <li>Spécialisation progressive d'une classe (<code>Square</code> contraint <code>width == height</code>)</li>
+          <li>Représentation textuelle personnalisée</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">ABC &amp; mixins</span>
+        <h3>Abstraction &amp; héritage multiple</h3>
+        <ul>
+          <li>Classes abstraites avec <code>ABC</code> et <code>@abstractmethod</code></li>
+          <li><strong>Mixins</strong> : comportements partagés (<code>SwimMixin</code>, <code>FlyMixin</code>)</li>
+          <li>Héritage multiple (<code>Fish</code> + <code>Bird</code> → créature hybride)</li>
+          <li>Sous-classer un type natif (<code>VerboseList(list)</code>) et <code>super()</code></li>
+          <li>Duck typing pour des formes (<code>Circle</code>, etc.)</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="web">
+    <h2>Higher Level Programming — Web &amp; Données</h2>
+    <p class="section-desc">Sérialisation, accès aux bases de données et création d'API REST.</p>
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">Serialization</span>
+        <h3>Sérialisation de données</h3>
+        <p>Convertir des objets Python ↔ formats stockables.</p>
+        <ul>
+          <li><strong>JSON</strong> : <code>json.dump/load</code>, <code>dumps/loads</code></li>
+          <li><strong>Pickle</strong> : objets Python complets, <code>"wb"</code>/<code>"rb"</code>, <code>@classmethod</code></li>
+          <li><strong>CSV</strong> : <code>csv.DictReader</code>, conversion vers JSON</li>
+          <li><strong>XML</strong> : <code>xml.etree.ElementTree</code>, arbre de balises</li>
+          <li>⚠️ Sécurité : ne jamais <code>pickle.load</code> une source non fiable</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">ORM</span>
+        <h3>Object-Relational Mapping</h3>
+        <p>Du SQL brut (MySQLdb) à SQLAlchemy.</p>
+        <ul>
+          <li>Connexion &amp; curseur avec <code>MySQLdb</code></li>
+          <li>Requêtes paramétrées (<code>%s</code>) contre les injections SQL</li>
+          <li><code>JOIN</code> entre tables</li>
+          <li>Modèles SQLAlchemy : <code>Column</code>, <code>ForeignKey</code>, <code>declarative_base</code></li>
+          <li><code>session.query/filter/order_by</code>, CRUD complet + <code>commit()</code></li>
+          <li>Relations entre modèles via <code>.join()</code></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">REST API</span>
+        <h3>API REST</h3>
+        <p>De <code>http.server</code> à Flask, avec authentification.</p>
+        <ul>
+          <li>Rappels HTTP : méthodes, codes de statut, headers</li>
+          <li>Client API avec <code>requests</code></li>
+          <li>Serveur HTTP "à la main" (<code>BaseHTTPRequestHandler</code>)</li>
+          <li>Flask : routes, <code>jsonify</code>, paramètres dynamiques</li>
+          <li>Principes REST : ressources, verbes HTTP, stateless</li>
+          <li>Auth : Basic Auth (<code>flask_httpauth</code>) et JWT (<code>flask_jwt_extended</code>)</li>
+          <li>Sécurité : hash de mots de passe, <code>401</code> vs <code>403</code></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="design">
+    <h2>Conception logicielle</h2>
+    <p class="section-desc">Modéliser avant de coder et structurer le code avec des design patterns.</p>
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">Design patterns</span>
+        <h3>Factory · Observer · Decorator</h3>
+        <ul>
+          <li><strong>Factory</strong> : centraliser la création d'objets via un registre</li>
+          <li><strong>Observer</strong> : un sujet notifie plusieurs observateurs (découplage émetteur/récepteurs)</li>
+          <li><strong>Decorator</strong> : composer des comportements sans multiplier les sous-classes</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">UML</span>
+        <h3>Diagrammes UML (Mermaid)</h3>
+        <ul>
+          <li>Diagramme de classes : attributs, méthodes, relations</li>
+          <li>Agrégation (<code>o--</code>) vs composition (<code>*--</code>)</li>
+          <li>Diagramme de séquence : ordre chronologique des messages</li>
+          <li>Vue statique (classes) vs dynamique (séquence)</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="algo">
+    <h2>Algorithmes (Interview prep)</h2>
+    <p class="section-desc">Exercices algorithmiques classiques en Python.</p>
+    <div class="grid">
+
+      <div class="card">
+        <h3>Lockboxes</h3>
+        <p>Parcours de graphe (DFS) pour vérifier si toutes les boîtes peuvent être ouvertes.</p>
+      </div>
+
+      <div class="card">
+        <h3>Log parsing</h3>
+        <p>Lecture de flux <code>stdin</code>, agrégation de statistiques par code de statut HTTP.</p>
+      </div>
+
+      <div class="card">
+        <h3>Minimum operations</h3>
+        <p>Programmation dynamique / factorisation pour minimiser un nombre d'opérations.</p>
+      </div>
+
+      <div class="card">
+        <h3>Pascal's triangle</h3>
+        <p>Construction itérative du triangle de Pascal sous forme de listes imbriquées.</p>
+      </div>
+
+      <div class="card">
+        <h3>UTF-8 validation</h3>
+        <p>Validation d'un encodage UTF-8 par manipulation de bits.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="sql">
+    <h2>Bases de données (SQL)</h2>
+    <p class="section-desc">Le complément naturel de l'ORM : requêtes SQL pures sur SQLite/MySQL.</p>
+    <div class="grid">
+
+      <div class="card">
+        <span class="tag">CRUD</span>
+        <h3>SQL CRUD</h3>
+        <ul>
+          <li>Création de table, insertion de données</li>
+          <li><code>SELECT</code>, filtres (<code>WHERE</code>, <code>AND</code>/<code>OR</code>), <code>ORDER BY</code>, <code>LIMIT</code></li>
+          <li>Agrégations : <code>COUNT</code>, <code>AVG</code>, <code>SUM</code>, <code>MAX</code>/<code>MIN</code>, <code>GROUP BY</code></li>
+          <li><code>UPDATE</code> et <code>DELETE</code> conditionnels</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="tag">Joins</span>
+        <h3>SQL Joins</h3>
+        <ul>
+          <li>Jointures entre auteurs/livres, étudiants/cours</li>
+          <li>Comptages via jointures + <code>GROUP BY</code></li>
+          <li>Filtrage sur des agrégats (cours au-dessus de la moyenne)</li>
+          <li>Relations many-to-many (inscriptions, instructeurs)</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Récapitulatif généré à partir des repos <code>holbertonschool-*</code> — Python
+</footer>
+
+</body>
+</html>
