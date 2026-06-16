@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Code qui lance un compteur random puis renvoi le temps"""
+"""Asynchronous coroutine that takes in max_delay and returns it."""
 
 import asyncio
 import random
