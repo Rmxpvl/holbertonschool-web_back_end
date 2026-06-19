@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""."""
+"""Asynchronous coroutine that waits for multiple task to finish and collect delay."""
 
 import asyncio
 from wait_random import wait_random
 
 async def wait_n(n: int, max_delay: int) -> list[float]:
+    """Wait for multiple coroutines to finish and return the sorted delays."""
     task_list = []
 
     for _ in range(n):
