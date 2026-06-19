@@ -2,7 +2,7 @@
 """Asynchronous coroutine that waits for a random delay."""
 
 import asyncio
-import random
+from 0-basic_async_syntax import wait_random
 
 
 async def wait_random(max_delay: int = 10) -> float:
